@@ -8,9 +8,14 @@ import java.util.List;
 @Entity
 @Table(name = "id")
 public class ID {
-    @ManyToMany(mappedBy = "studentsList")
-    private List<ID> idList;
-
+    @ManyToMany(mappedBy = "studentList")
+    private List<Student> studentList;
+    @ManyToMany(mappedBy = "teacherList")
+    private List<Teacher> teacherList;
+    @ManyToMany(mappedBy = "facultyList")
+    private List<Faculty> facultyList;
+    @ManyToMany(mappedBy = "lessonList")
+    private List<lessons> lessonList;
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_gen_id")
